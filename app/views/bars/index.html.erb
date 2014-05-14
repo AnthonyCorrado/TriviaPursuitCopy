@@ -1,0 +1,30 @@
+<h1>Find a Trivia Near You</h1>
+
+<div id="restlist">
+	<div id="restlistbox">
+		<h1>List of Restaurants</h1>
+			<table class="table table-hover">
+				<tr>
+					<th>NAME</th>
+					<th>DAY</th>
+					<th>TIME</th>
+					<th>THEME</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			<% @bars.each do |b| %>
+				<tr>			
+					<td><%= link_to b.name, b,'data-no-turbolink' => true %></td>
+					<td><%= b.day %></td>
+					<td><%= b.time%></td>
+					<td><%= b.theme%></td>
+					<td><a href="<%= b.web %>">website</a></td>
+					<td><%= button_to 'Update', edit_bar_path(b._id), method: 'get' %></td>
+					<td><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?' %></td>
+				</tr>	
+			<%end %>
+			</table>
+	</div>
+</div>

@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Bar.destroy_all
+
+bars = Bar.create([
+{name: 'JPs Sports Bar and Grill', day: 'tuesday', time: '9:00pm', theme: 'general', web: 'http://www.yelp.com/biz/jps-sports-bar-and-grill-santa-monica#query:bar%20trivia' }
+])
