@@ -8,4 +8,6 @@ class Bar
   field :time, type: String
   field :theme, type: String
   field :web, type: String
+  field :lat, type: String
+  field :lon, type: String
 end

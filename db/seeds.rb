@@ -9,5 +9,5 @@
 Bar.destroy_all
 
 bars = Bar.create([
-{name: 'JPs Sports Bar and Grill', day: 'tuesday', time: '9:00pm', theme: 'general', web: 'http://www.yelp.com/biz/jps-sports-bar-and-grill-santa-monica#query:bar%20trivia' }
+{name: 'JPs Sports Bar and Grill', day: 'tuesday', time: '9:00pm', theme: 'general', web: 'http://www.yelp.com/biz/jps-sports-bar-and-grill-santa-monica#query:bar%20trivia', lat: '34.024743', lon: '-118.491736'}
 ])
