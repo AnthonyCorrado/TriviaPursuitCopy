@@ -32,7 +32,11 @@ class BarsController < ApplicationController
 	end
 
 	def destroy
+		@bar = Bar.find(params[:id])
+		@bar.destroy
+		redirect_to bars_path
 	end
-
 end
+
+
 

@@ -1,1 +1,45 @@
-<h1>Bar Home Page</h1>
+<div class="container-fluid">
+  <div class="backing">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 profile">
+    <p id="notice"><%= notice %></p>
+
+    <p class="backing">
+      <strong>Name:</strong>
+      <%= @bar.name %>
+    </p>
+
+    <p class="backing">
+      <strong>Address:</strong>
+      <%= @bar.street %>, <%= @bar.city %> <%= @bar.zip %>
+    </p>
+
+    <p class="backing">
+      <strong>Day:</strong>
+      <%= @bar.day %>
+    </p>
+
+    <p class="backing">
+      <strong>Time:</strong>
+      <%= @bar.time %>
+    </p>
+
+    <p class="backing">
+      <strong>Theme:</strong>
+      <%= @bar.theme %>
+    </p>
+
+    <p class="backing">
+      <strong>Website:</strong>
+      <%= @bar.web %>
+    </p>
+
+    <p class="backing">
+    <%= link_to 'Edit', edit_bar_path(@bar) %> |
+    <%= link_to 'Back', bars_path %>
+    </p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+

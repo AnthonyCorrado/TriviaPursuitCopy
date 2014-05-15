@@ -1,7 +1,11 @@
 @import 'bootstrap';
 
+#container { 
+	padding:0 50px 0 50px;
+}
+
 body {
-	color: white;
+	color: black;
 }
 
 #main-container {
@@ -20,6 +24,10 @@ table {
 }
 
 .backing {
-	background-color: rgba(50, 50, 50,.8)
+	
+}
+
+.form-color{
+	background-color: #b3d1ff
 }
 
