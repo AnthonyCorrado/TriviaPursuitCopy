@@ -1,33 +1,58 @@
 @import 'bootstrap';
 
 #container { 
-	padding:0 50px 0 50px;
+	padding:0 0 0 90px;
+}
+
+.logo {
+
+	display: inline-block;
+	color: #4289c7;
+	font-size: 30px;
+	margin-left:500px;
 }
 
 body {
-	color: black;
+	color: white;
+	margin-top: 50px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 20px;
 }
 
-#main-container {
+#map {
 	// height: 500px;
 	// width: 500px;
 	// margin: 0 auto;
 	width: 100%;
-	height:1000px;
-	position: fixed;
+	height:1200px;
+	position: absolute;
 	z-index: -10000;
 	margin-top: -1000px;
 }
 
 table {
 	position: relative;
+
+
 }
 
 .backing {
-	
+	background-color: rgba(50, 50, 50,.5)
 }
 
 .form-color{
 	background-color: #b3d1ff
 }
 
+.rows {
+	background-color: rgba(50, 50, 50,.6);
+
+}
+.table {
+
+}
+#nav {
+}
+.backing2 {
+	margin: 20px
+}

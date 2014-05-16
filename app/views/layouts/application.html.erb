@@ -3,6 +3,7 @@
 <head>
   <title>BurritoApp</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,16 +17,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Bars for Everyone</a>
+      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "View Burritos", bars_path %></li>
-        <li><%= link_to "New Burrito", new_bar_path %></li>
+        <li><%= link_to "Home", bars_path %></li>
+        <li><%= link_to "New Bars", new_bar_path %></li>
+
       </ul>
+      
+        <li class="logo">Trivia Pursuit</li>
+      
+
       <ul class="nav navbar-nav navbar-right">
         <% if session[:remember_token] %>
           <li><%= "Hello " + current_user.name %></li>
