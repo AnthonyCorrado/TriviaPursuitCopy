@@ -7,7 +7,7 @@
 
 <div id="restlist">
 	<div id="restlistbox">
-		<h1>List of Restaurants</h1>
+		<h1>List of Your Bars</h1>
 			<table class="table table-hover" class="table">
 				<tr>
 					<th>NAME</th>
@@ -23,13 +23,13 @@
 				</tr>
 			<% @bars.each do |b| %>
 				<tr>			
-					<td class="rows"><%= link_to b.name, b,'data-no-turbolink' => true %></td>
+					<td class="links" class="rows"><%= link_to b.name, b,'data-no-turbolink' => true %></td>
 					<td class="rows"><%= b.day %></td>
 					<td class="rows"><%= b.time%></td>
 					<td class="rows"><%= b.theme%></td>
-					<td class="rows"><a href="<%= b.web %>">website</a></td>
-					<td class="rows"><%= button_to 'Update', edit_bar_path(b._id), method: 'get' %></td>
-					<td class="rows"><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?' %></td>
+					<td class="links" class="rows"><a href="<%= b.web %>">website</a></td>
+					<td class="rows"><%= button_to 'Update', edit_bar_path(b._id), method: 'get', :class => "button" %></td>
+					<td class="rows"><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?', :class => "button" %></td>
 				</tr>	
 			<%end %>
 			</table>

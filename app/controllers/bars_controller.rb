@@ -13,7 +13,7 @@ class BarsController < ApplicationController
 	end
 
 	def create
-		Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme))
+		Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon))
 		redirect_to bars_path
 	end
 
@@ -24,7 +24,7 @@ class BarsController < ApplicationController
 	def update
 		@bar = Bar.find(params[:id])
 		if
-			Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme))
+			Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon))
 			redirect_to bars_path
 		else
 			render 'edit'

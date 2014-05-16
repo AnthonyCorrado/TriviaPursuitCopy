@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "You have signed up successfully"
-      redirect_to :root
+      flash[:success] = "Welcome, " + @user.name.capitalize + ", you may now start your pursuit of trivia!"
+      session[:remember_token] = @user.id
+      @current_user = @user
+      redirect_to bars_path
+
     else
       render :new
     end

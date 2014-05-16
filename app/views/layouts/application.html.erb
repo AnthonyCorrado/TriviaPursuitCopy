@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BurritoApp</title>
+  <title>Trivia Pursuit</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -33,8 +33,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if session[:remember_token] %>
-          <li><%= "Hello " + current_user.name %></li>
-          <li><%= link_to "Log Out", session_path, method: :delete %></li>
+          <li><%= link_to "Log Out", new_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", new_session_path %></li>  

@@ -12,14 +12,11 @@ class SessionsController < ApplicationController
   	else
   		flash[:error] = "Invalid email/password combination. Please try again."
   		render 'new'
-  		end
   	end
+  end
 
   def destroy
   	session.delete(:remember_token)
-  	redirect_to bars_path
-  end
-
-
-  
+  	redirect_to new_session_path
+  end  
 end
