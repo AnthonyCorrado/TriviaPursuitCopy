@@ -6,6 +6,7 @@ class BarsController < ApplicationController
 
 	def show
 		@bar = Bar.find(params[:id])
+		@showbarnum = 0
 	end
 
 	def new
@@ -36,6 +37,11 @@ class BarsController < ApplicationController
 		@bar.destroy
 		redirect_to bars_path
 	end
+
+	# def search
+ #    	parameters = { term: params[:term], limit: 16 }
+ #    	render json: Yelp.client.search('San Francisco', parameters)
+ #  	end
 end
 
 

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'yelp', require: 'yelp'
+gem 'oauth', require: 'oauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 gem 'mongoid', github: 'mongoid/mongoid'
@@ -42,4 +43,3 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor'
-

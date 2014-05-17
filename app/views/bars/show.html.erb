@@ -7,12 +7,18 @@
 
       <p class="backing">
         <strong>Name:</strong>
-        <%= @bar.name %>
+        <%= results[@showbarnum].name %>
       </p>
 
       <p class="backing">
-        <strong>Address:</strong>
-        <%= @bar.street %>, <%= @bar.city %> <%= @bar.zip %>
+        <strong>Address: </strong>
+        <%= location[0] %>, <%= location[2] %>
+      </p>
+
+      <p class="backing">
+        <strong>Phone:</strong>
+        <% string = results[0].phone %>
+        <%= string.insert(3,'-').insert(7,'-') %>
       </p>
 
       <p class="backing">
@@ -32,7 +38,7 @@
 
       <p class="backing">
         <strong>Website:</strong>
-        <%= @bar.web %>
+        <a href="<%= results[0].url %>"><%= results[0].url %></a>
       </p>
 
       <p class="backing">

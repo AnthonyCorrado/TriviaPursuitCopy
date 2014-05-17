@@ -5,6 +5,7 @@
 		<div id="container">
 <h1>Find a Trivia Near You</h1>
 
+
 <div id="restlist">
 	<div id="restlistbox">
 		<h1>List of Your Bars</h1>
@@ -21,17 +22,20 @@
 					<th></th>
 					<th></th>
 				</tr>
+			<% @barnum = 0 %>
 			<% @bars.each do |b| %>
 				<tr>			
-					<td class="links" class="rows"><%= link_to b.name, b,'data-no-turbolink' => true %></td>
+					<td class="links" class="rows">
+						<%= link_to results[@barnum].name, b,'data-no-turbolink' => true %></td>
 					<td class="rows"><%= b.day %></td>
 					<td class="rows"><%= b.time%></td>
 					<td class="rows"><%= b.theme%></td>
-					<td class="links" class="rows"><a href="<%= b.web %>">website</a></td>
+					<td class="links" class="rows"><a href="<%= results[@barnum].url %>">website</a></td>
 					<td class="rows"><%= button_to 'Update', edit_bar_path(b._id), method: 'get', :class => "button" %></td>
 					<td class="rows"><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?', :class => "button" %></td>
 				</tr>
-					<%end %>
+					<% @barnum +=1 %>
+				<%end %>
 					<th class="links" class="rows" ><%= link_to 'Add A New Bar', new_bar_path, :class => "addbar"%>
 						<td class="links" class="rows"></td>
 						<td class="links" class="rows"></td>
@@ -39,6 +43,7 @@
 						<td class="links"></td>
 						<td class="links" class="rows"></td>
 						<td class="links" class="rows"></td>
+
 					</th>
 			</table>
 			

@@ -39,3 +39,12 @@ end
 	def remember_token
 	    cookies.signed[:remember_token] || [nil,nil]
 	end
+
+	def results
+		@result = Yelp.client.search('Santa Monica', {term: 'bar trivia', limit: 20}).businesses
+	end
+	
+	def location
+		@location =  Yelp.client.search('Santa Monica', {term: 'bar trivia', limit: 1}).businesses[0].location.display_address
+	end
+
