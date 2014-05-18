@@ -16,7 +16,7 @@ body {
 	color: white;
 	margin-top: 50px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 20px;
+	font-size: 23px;
 }
 
 #map {
@@ -59,4 +59,25 @@ table {
 }
 #navfont {
 	color: rgba(243, 108, 101, .6);
+}
+.map-att {
+	width: 100%;
+	height: 400px;
+}
+.col-md-6 {
+	background-color: rgb(152, 152, 152);
+}
+div.image {
+   content:url(bar-trivia-background.jpg);
+   position: absolute;
+   width: 95%;
+   margin-top: -50px;
+   padding: 20px;
+   text-align: center;
+}
+@media all and (max-width: 1000px) {
+  div.image { display: none; }
+}
+.titles {
+	background:rgb(152, 152, 152);
 }

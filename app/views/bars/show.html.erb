@@ -1,52 +1,71 @@
 <body>
+  <div class="image"></div>​
   <div class="container-fluid">
     <div class="backing">
       <div class="col-md-3"></div>
       <div class="col-md-6 profile">
+        <table border="1">
       <p id="notice"><%= notice %></p>
-
-      <p class="backing">
-        <strong>Name:</strong>
-        <%= results[@showbarnum].name %>
-      </p>
-
-      <p class="backing">
-        <strong>Address: </strong>
-        <%= location[0] %>, <%= location[2] %>
-      </p>
-
-      <p class="backing">
-        <strong>Phone:</strong>
-        <% string = results[0].phone %>
-        <%= string.insert(3,'-').insert(7,'-') %>
-      </p>
-
-      <p class="backing">
-        <strong>Day:</strong>
-        <%= @bar.day %>
-      </p>
-
-      <p class="backing">
-        <strong>Time:</strong>
-        <%= @bar.time %>
-      </p>
-
-      <p class="backing">
-        <strong>Theme:</strong>
-        <%= @bar.theme %>
-      </p>
-
-      <p class="backing">
-        <strong>Website:</strong>
-        <a href="<%= results[0].url %>"><%= results[0].url %></a>
-      </p>
-
-      <p class="backing">
+    <tr>
+      <td><strong class="titles">Name:</td>
+      <td class="backing"><%= results[@showbarnum].name %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Address: </strong></td>
+      <td class="backing"><%= location[0] %>, <%= location[2] %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Phone:</strong></td>
+      <td class="backing"><% string = results[0].phone %>
+        <%= string.insert(3,'-').insert(7,'-') %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Day:</strong></td>
+      <td class="backing"><%= @bar.day %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Time:</strong></td>
+      <td class="backing"><%= @bar.time %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Theme:</strong></td>
+      <td class="backing"><%= @bar.theme %></td>
+    </tr>
+    <tr>
+      <td><strong class="titles">Website:</strong></td>
+      <td class="backing"><a href="<%= results[0].url %>"><%= results[0].url %></a></td>
+    </tr>
+    <tr>
+      <td class="backing">
       <%= link_to 'Edit', edit_bar_path(@bar) %> |
       <%= link_to 'Back', bars_path %>
-      </p>
+      </td>
+    </tr>
+
+      </table>
+      
+      <iframe class="map-att" src="https://www.google.com/maps/embed/v1/place?q=11835%20Wilshire%20Blvd%2C%20Los%20Angeles%2C%20CA%2090025&key=AIzaSyCT8qHuiTUCTZIY8u7OUmNLl7Bx8TpDHH8"></iframe>
+
       </div>
       <div class="col-md-3"></div>
     </div>
   </div>
+<script type="text/javascript">
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'one_marker'}}, function(){
+  markers = handler.addMarkers([
+    {
+      lat: 34.024743,
+      lng: -118.491736,
+      picture: {
+        url: "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+        width:  36,
+        height: 36
+      },
+      infowindow: "hello!"
+    }
+  ]);
+});
+   
+</script>
 </body>
