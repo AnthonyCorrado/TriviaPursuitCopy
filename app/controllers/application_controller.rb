@@ -11,3 +11,4 @@ def authenticate_user
 		redirect to new_session_path
 	end
 end
+

@@ -34,7 +34,8 @@
 					<td class="rows"><%= button_to 'Update', edit_bar_path(b._id), method: 'get', :class => "button" %></td>
 					<td class="rows"><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?', :class => "button" %></td>
 				</tr>
-					<% @barnum +=1 %>
+
+					<% @barnum +=1%>
 				<%end %>
 					<th class="links" class="rows" ><%= link_to 'Add A New Bar', new_bar_path, :class => "addbar"%>
 						<td class="links" class="rows"></td>

@@ -37,7 +37,7 @@ table {
 	background-color: rgba(50, 50, 50,.5)
 }
 .form-color{
-	background-color: #b3d1ff
+	color: #4289c7
 }
 .rows {
 	background-color: rgba(50, 50, 50,.6);
@@ -50,6 +50,12 @@ table {
 }
 .button {
 	color: black;
+	display: inline-block;
+}
+.button-show {
+	color: black;
+	display: inline-block;
+	width: 100%;
 }
 #form-font {
 	color: #4289c7;
@@ -60,9 +66,10 @@ table {
 #navfont {
 	color: rgba(243, 108, 101, .6);
 }
-.map-att {
+#map-att {
 	width: 100%;
-	height: 400px;
+	height: 500px;
+	color: #4289c7;
 }
 .col-md-6 {
 	background-color: rgb(152, 152, 152);
@@ -80,4 +87,13 @@ div.image {
 }
 .titles {
 	background:rgb(152, 152, 152);
+}
+.selects {
+	color: white;
+}
+.bluebuttons {
+	color: #4289c7;
+}
+.show-table {
+	width: 100%;
 }

@@ -41,10 +41,7 @@ end
 	end
 
 	def results
-		@result = Yelp.client.search('Santa Monica', {term: 'bar trivia', limit: 20}).businesses
-	end
-	
-	def location
-		@location =  Yelp.client.search('Santa Monica', {term: 'bar trivia', limit: 1}).businesses[0].location.display_address
+		@result = Yelp.client.search('Santa Monica', {term: 'bar trivia', limit: 15}).businesses
 	end
 
+	

@@ -1,12 +1,13 @@
 class BarsController < ApplicationController
-	
+
 	def index
 		@bars = Bar.all
 	end
 
 	def show
 		@bar = Bar.find(params[:id])
-		@showbarnum = 0
+		@offset = 0
+		@map_location = Yelp.client.search('Santa Monica', {term: 'bar trivia', offset: @offset, limit: 1}).region.center
 	end
 
 	def new
@@ -14,8 +15,8 @@ class BarsController < ApplicationController
 	end
 
 	def create
-		Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon))
-		redirect_to bars_path
+		@bar = Bar.create(params.require(:bar).permit(:biz_id, :name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon)) if params[:status]
+			redirect_to bars_path(@bar)
 	end
 
 	def edit
@@ -25,7 +26,7 @@ class BarsController < ApplicationController
 	def update
 		@bar = Bar.find(params[:id])
 		if
-			Bar.create(params.require(:bar).permit(:name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon))
+			Bar.create(params.require(:bar).permit(:biz_id, :name, :street, :city, :zip, :day, :time, :theme, :web, :lat, :lon))
 			redirect_to bars_path
 		else
 			render 'edit'
@@ -37,6 +38,7 @@ class BarsController < ApplicationController
 		@bar.destroy
 		redirect_to bars_path
 	end
+
 
 	# def search
  #    	parameters = { term: params[:term], limit: 16 }

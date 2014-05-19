@@ -1,5 +1,6 @@
 class Bar
   include Mongoid::Document
+  field :biz_id, type: Integer
   field :name, type: String
   field :street, type: String
   field :city, type: String

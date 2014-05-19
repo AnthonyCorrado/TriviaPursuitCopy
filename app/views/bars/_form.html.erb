@@ -1,25 +1,38 @@
-<div class='backing' class='backing2' class="rows">
-<%= form_for @bar do |f| %>
-<tr>
-	<th>Bar Name: <%= f.text_field :name, class: "form-color" %></th>
-	<br />
-	<th>Street: <%= f.text_field :street %></th>
-	<br />
-	<th>City:<%= f.text_field :city %></th>
-	<br />
-	<th>Zip:<%= f.number_field :zip %></th>
-	<br />
-	<th>Day:<%= f.select :day, [['Monday'],['Tuesday'],['Wednesday'],['Thursday'],['Friday'],['Saturday'],['Sunday']]%></th>
-	<th>Time:<%= f.text_field :time %></th>
-	<th>Theme:<%= f.select :theme, [['general'],['entertainment'],['sports']] %></th>
-	<th>Web:<%= f.text_field :web %></th>
-	<th>Latitude:<%= f.text_field :lat %></th>
-	<th>Longitude:<%= f.text_field :lon %></th>
-</tr>
+  <div class="image"></div>​
+  <div class="container-fluid">
+    <div class="backing">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 profile">
+        <table border="1" class="show-table">
+            <p id="notice"><%= notice %></p>
+            <%= form_for @bar do |f| %>
+          <tr>
+            <td><strong class="titles">Name: <%= f.text_field :name, class: "form-color" %></td>
+            <td class="backing" class="wide-row">Street: <%= f.text_field :street, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td><strong class="titles">City:<%= f.text_field :city, class: "form-color" %> </strong></td>
+            <td class="backing">Zip:<%= f.text_field :zip, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td class="bluebuttons" class="titles"><span class="selects">Day:</span><%= f.select :day, [['Monday'],['Tuesday'],['Wednesday'],['Thursday'],['Friday'],['Saturday'],['Sunday']], class: "form-color" %></td>
+            <td class="backing">Time:<%= f.text_field :time, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td class="bluebuttons" class="titles"><span class="selects">Theme:</span><%= f.select :theme, [['general'],['entertainment'],['sports']] %></td>
+            <td class="backing">Web:<%= f.text_field :web, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td><strong class="titles">Latitude:<%= f.text_field :lat, class: "form-color" %></strong></td>
+            <td class="backing">Longitude:<%= f.text_field :lon, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit 'Add', :class => "button" %></td>
+          </tr>
+            
+          <% end %>
+        </table>
 
-
-	<%= f.submit 'Add' %>
-<% end %>
-</div>
-
-
+      <div class="col-md-3"></div>
+    </div>
+  </div>
