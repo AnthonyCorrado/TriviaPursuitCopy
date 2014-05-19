@@ -8,7 +8,6 @@
 
 <div id="restlist">
 	<div id="restlistbox">
-		<h1>List of Your Bars</h1>
 			<table class="table table-hover" class="table">
 				<tr>
 					<th class="links" >NAME</th>
@@ -18,9 +17,7 @@
 					<th class="links" ></th>
 					<th class="links" ></th>
 					<th class="links" ></th>
-					<th></th>
-					<th></th>
-					<th></th>
+					
 				</tr>
 			<% @barnum = 0 %>
 			<% @bars.each do |b| %>
@@ -31,7 +28,7 @@
 					<td class="rows"><%= b.time%></td>
 					<td class="rows"><%= b.theme%></td>
 					<td class="links" class="rows"><a href="<%= results[@barnum].url %>">website</a></td>
-					<td class="rows"><%= button_to 'Update', edit_bar_path(b._id), method: 'get', :class => "button" %></td>
+					<td class="rows"><%= button_to 'Update', edit_bar_path(b), method: 'get', :class => "button" %></td>
 					<td class="rows"><%= button_to 'Delete', bar_path(b._id), method: 'delete', :confirm => 'Are you sure?', :class => "button" %></td>
 				</tr>
 
@@ -51,9 +48,7 @@
     </div>
     <!-- The right column, featuring a 500 x 500 map -->
     <div class="col-md-6">
-      <h1>Our map goes here</h1>
       <!-- The "canvas," where our map is rendered -->
-      <div id="map-canvas"></div>
     </div>
   </div>
 </div>

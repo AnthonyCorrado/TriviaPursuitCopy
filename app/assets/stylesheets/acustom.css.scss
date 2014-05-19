@@ -1,15 +1,15 @@
 @import 'bootstrap';
 
 #container { 
-	padding:0 0 0 90px;
+	padding:0 90px 0 90px;
 }
 
-.logo {
-
-	display: inline-block;
+#logo {
+	width: 100%;
+	position: relative;
+	display: inline;
 	color: #4289c7;
 	font-size: 30px;
-	margin-left:500px;
 }
 
 body {
@@ -27,14 +27,16 @@ body {
 	height:1200px;
 	position: absolute;
 	z-index: -10000;
-	margin-top: -1000px;
+	margin-top: -1070px;
 }
 
 table {
 	position: relative;
 }
 .backing {
-	background-color: rgba(50, 50, 50,.5)
+	background-color: rgba(50, 50, 50,.5);
+	padding-left: 10px;
+	margin-top: -20px;
 }
 .form-color{
 	color: #4289c7
@@ -51,6 +53,7 @@ table {
 .button {
 	color: black;
 	display: inline-block;
+	width: 60%;
 }
 .button-show {
 	color: black;
@@ -87,6 +90,7 @@ div.image {
 }
 .titles {
 	background:rgb(152, 152, 152);
+	padding-left: 5px;
 }
 .selects {
 	color: white;
@@ -96,4 +100,14 @@ div.image {
 }
 .show-table {
 	width: 100%;
+}
+input {
+	width: 100%;
+}
+.key {
+	width: 20%;
+}
+#app-title-center {
+	position: relative;
+	padding: 0 30% 0 25%;
 }

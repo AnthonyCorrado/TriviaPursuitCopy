@@ -41,9 +41,10 @@
             <td class="backing"><a href="<%= results[@bar.biz_id].url %>"><%= results[@bar.biz_id].url %></a></td>
           </tr>
           <tr>
-            <td class="backing"><%= button_to 'Edit', edit_bar_path(@bar), :class => "button-show", :method => :get %>
+            <td>
+              <%= button_to 'Edit', edit_bar_path, :class => "button-show", method: 'get' %>
             </td>
-            <td  class="backing"><%= button_to 'Back', bars_path, :class => "button-show" %></td>
+            <td><%= button_to 'Back', bars_path, :class => "button-show" %></td>
           </tr>
         </table>
 
@@ -61,8 +62,8 @@ handler = Gmaps.build('Google');
     markers = handler.addMarkers([
       {
       
-        lat: <%=@map_location.latitude %>, // pulls in the latitude for the marker via ERB
-        lng: <%=@map_location.longitude %>, // pulls in the longitude for the marker via ERB
+        lat: <%= @bar.lat %>, // pulls in the latitude for the marker via ERB
+        lng: <%= @bar.lon %>, // pulls in the longitude for the marker via ERB
         infowindow: "Trivia at <%= results[@bar.biz_id].name %> 's tonight?" // info window text (this is optional)
       },
     ]);  

@@ -3,8 +3,7 @@ class Bar
   field :biz_id, type: Integer
   field :name, type: String
   field :street, type: String
-  field :city, type: String
-  field :zip, type: String
+  field :city_state_zip, type: String
   field :day, type: String
   field :time, type: String
   field :theme, type: String

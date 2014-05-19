@@ -7,24 +7,39 @@
             <p id="notice"><%= notice %></p>
             <%= form_for @bar do |f| %>
           <tr>
-            <td><strong class="titles">Name: <%= f.text_field :name, class: "form-color" %></td>
-            <td class="backing" class="wide-row">Street: <%= f.text_field :street, class: "form-color" %></td>
+            <td class="key"><strong class="titles">Name: </strong></td>
+            <td><%= f.text_field :name, class: "form-color" %></td>
           </tr>
           <tr>
-            <td><strong class="titles">City:<%= f.text_field :city, class: "form-color" %> </strong></td>
-            <td class="backing">Zip:<%= f.text_field :zip, class: "form-color" %></td>
+            <td><strong class="titles">Street: </strong></td>
+            <td><%= f.text_field :street, class: "form-color" %></td>
           </tr>
           <tr>
-            <td class="bluebuttons" class="titles"><span class="selects">Day:</span><%= f.select :day, [['Monday'],['Tuesday'],['Wednesday'],['Thursday'],['Friday'],['Saturday'],['Sunday']], class: "form-color" %></td>
-            <td class="backing">Time:<%= f.text_field :time, class: "form-color" %></td>
+            <td><strong class="titles">City: </strong></td>
+            <td><%= f.text_field :city_state_zip, class: "form-color" %> </strong></td>
           </tr>
           <tr>
-            <td class="bluebuttons" class="titles"><span class="selects">Theme:</span><%= f.select :theme, [['general'],['entertainment'],['sports']] %></td>
-            <td class="backing">Web:<%= f.text_field :web, class: "form-color" %></td>
+            <td class="bluebuttons" class="titles"><span class="selects">Day: </span></td>
+            <td class="bluebuttons"><%= f.select :day, [['Monday'],['Tuesday'],['Wednesday'],['Thursday'],['Friday'],['Saturday'],['Sunday']], class: "form-color" %></td>
           </tr>
           <tr>
-            <td><strong class="titles">Latitude:<%= f.text_field :lat, class: "form-color" %></strong></td>
-            <td class="backing">Longitude:<%= f.text_field :lon, class: "form-color" %></td>
+            <td><strong class="titles">Time: </strong></td>
+            <td><%= f.text_field :time, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td class="titles"><span class="selects">Theme: </span></td>
+            <td class="bluebuttons"><%= f.select :theme, [['general'],['entertainment'],['sports']] %></td>
+          <tr>
+            <td><strong class="titles">Web: </strong></td>
+            <td><%= f.text_field :web, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td><strong class="titles">Latitude: </strong></td>
+            <td><%= f.text_field :lat, class: "form-color" %></td>
+          </tr>
+          <tr>
+            <td><strong class="titles">Longitude: </strong></td>
+            <td><%= f.text_field :lon, class: "form-color" %></td>
           </tr>
           <tr>
             <td><%= f.submit 'Add', :class => "button" %></td>
