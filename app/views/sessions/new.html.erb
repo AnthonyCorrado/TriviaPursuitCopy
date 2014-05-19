@@ -1,9 +1,32 @@
-<div class="backing">
-	<h1>Login</h1>
 
-	<%= form_for :session, :url => sessions_path do |f|%>
-		Email: <%= f.text_field :email, :id => "form-font" %>
-		Password: <%= f.password_field :password, :id => "form-font" %>
-		<%= f.submit "Log me in", :class => "button" %>
-	<% end %>
-</div>
+<h1>Login</h1>
+<div class="image"></div>​
+  <div class="container-fluid">
+    <div class="backing">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 profile">
+        <table border="1" class="show-table">
+
+			<%= form_for :session, :url => sessions_path do |f|%>
+	
+			<tr>
+				<td class="titles-session"></td>
+				<td class="links" class="rows"></td>
+			</tr>
+			<tr>
+				<td class="titles-session">Email: </td>
+				<td><%= f.text_field :email, :id => "form-font" %></td>
+			</tr>
+			<tr>
+				<td class="titles-session">Password: </td>
+				<td><%= f.password_field :password, :id => "form-font" %></td>
+			</tr>
+			<tr>
+				<td class="links" class="rows"><%= f.submit "Login", :class => "button-show" %></td>
+				<td class="links" class="rows"></td>
+			<% end %>
+		</table>
+
+      <div class="col-md-3"></div>
+    </div>
+  </div>
