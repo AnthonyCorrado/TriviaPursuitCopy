@@ -5,7 +5,6 @@ gem 'oauth', require: 'oauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 gem 'mongoid', github: 'mongoid/mongoid'
-gem 'genghis', '~> 1.4.1'
 gem 'gmaps4rails'
 
 # Use SCSS for stylesheets
