@@ -23,7 +23,7 @@
 			<% @bars.each do |b| %>
 				<tr>			
 					<td class="links" class="rows">
-						<%= link_to results[@barnum].name, b,'data-no-turbolink' => true %></td>
+						<%= link_to b.name, b,'data-no-turbolink' => true %></td>
 					<td class="rows"><%= b.day %></td>
 					<td class="rows"><%= b.time%></td>
 					<td class="rows"><%= b.theme%></td>

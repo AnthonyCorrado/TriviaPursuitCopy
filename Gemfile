@@ -6,6 +6,7 @@ gem 'oauth', require: 'oauth'
 gem 'rails', '4.1.0'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'gmaps4rails'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
