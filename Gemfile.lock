@@ -57,6 +57,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     gmaps4rails (2.1.2)
     hike (1.2.3)
     i18n (0.6.9)
@@ -153,6 +156,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.1.1)
   coffee-rails (~> 4.0.0)
+  figaro
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
