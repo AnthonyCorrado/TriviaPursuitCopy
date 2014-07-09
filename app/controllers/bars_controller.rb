@@ -2,6 +2,34 @@ class BarsController < ApplicationController
 
 	def index
 		@bars = Bar.all
+		client = Yelp::Client.new
+		@all_bars = Yelp.client.search(55122, term: "bar trivia").businesses
+		@all_bars_location = Yelp.client.search(90025, term: "bar trivia").region.center
+		Bar.destroy_all
+		@all_bars.each do |b|
+			Bar.create([{
+				biz_id: b.id,
+				name: b.name,
+				street: b.location.display_address[0],
+				city_state_zip: 	
+					if b.location.display_address[2]
+						b.location.display_address[2]
+					else
+						b.location.display_address[1]
+					end,
+				phone: b.phone,
+				day: 'tuesday',
+				time: '7:00pm',
+				theme: 'general',
+				web: b.url,	
+				}])
+		end
+			# @all_bars_location.each do |l|
+			# 	Bar.create([{
+			# 	lat: l.latitude,
+			# 	lon: l.longitude
+			# 	}])
+			# end
 	end
 
 	def show
@@ -41,12 +69,26 @@ class BarsController < ApplicationController
 		redirect_to bars_path
 	end
 
-
 	# def search
  #    	parameters = { term: params[:term], limit: 16 }
  #    	render json: Yelp.client.search('San Francisco', parameters)
  #  	end
-end
+	# def storeCallback
+	# 	Bar.destroy_all
+	# 		bars = Bar.create([{
+	# 			biz_id: y,
+	# 			name: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].name,
+	# 			street: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].location.display_address[0],
+	# 			city_state_zip: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].location.display_address[2],
+	# 			day: 'tuesday',
+	# 			time: '8:00pm',
+	# 			theme: 'general',
+	# 			web: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].url,
+	# 			lat: Yelp.client.search('Santa Monica', {term:'bar trivia',limit: 1, offset:y}).region.center.latitude,
+	# 			lon: Yelp.client.search('Santa Monica', {term:'bar trivia',limit: 1, offset:y}).region.center.longitude}
+	# 			])
+	# 		y += 1
+	# 	end
+	# end
 
-
-
+end 
