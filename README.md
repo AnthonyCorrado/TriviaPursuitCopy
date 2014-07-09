@@ -4,11 +4,16 @@
 
 The goal of this project is to connect those brainiac drinkers with local bar trivia nights. A marriage made in AA heaven?
 
-There is a complete rewrite and overhaul in the works currently. The new version is being developed for mobile first using Foundation. The interface is getting much streamlined as well. 
+There is a complete rewrite and overhaul in the works currently. The new version is being developed for mobile first using Foundation. The interface is getting streamlined as well. 
 
 ## How it works
 
 Using Google Maps API, it geolocates to your area. Then, using Yelp's API, it finds bars containing "trivia" in their reviews. Currently, the day, time and theme all have to be hardcoded. 
+
+## What Makes it Tick
+* Built using Ruby on Rails and some Javascript 
+* Incorporates Yelp API and Google Maps API
+* Styling courtesy of CSS and a love for semi-transparent divs
 
 ## Future Additions in the Second Version
 
