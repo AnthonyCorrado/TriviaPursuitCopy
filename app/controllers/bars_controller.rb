@@ -7,22 +7,19 @@ class BarsController < ApplicationController
 		@all_bars_location = Yelp.client.search(90025, term: "bar trivia").region.center
 		Bar.destroy_all
 		@all_bars.each do |b|
+			@bar_data = b.location.display_address
+			@addy = @bar_data[2] || @bar_data[1]
 			Bar.create([{
 				name: b.name,
-				street: b.location.display_address[0],
-				city_state_zip: 	
-					if b.location.display_address[2]
-						b.location.display_address[2]
-					else
-						b.location.display_address[1]
-					end,
+				full_address: @bar_data[0] + ", " + @addy,
 				phone: b.phone,
-				day: 'tuesday',
-				time: '7:00pm',
+				day: 'N/A',
+				time: 'N/A',
 				theme: 'general',
-				web: b.url,	
+				web: b.url,
 				}])
 			@bar = Bar
+
 		end
 			# @all_bars_location.each do |l|
 			# 	Bar.create([{
@@ -30,6 +27,8 @@ class BarsController < ApplicationController
 			# 	lon: l.longitude
 			# 	}])
 			# end
+
+
 	end
 
 	def show
@@ -41,7 +40,7 @@ class BarsController < ApplicationController
 	end
 
 	def create
-		Bar.create(params.require(:bar).permit(:biz_id, :name, :street, :city_state_zip, :day, :time, :theme, :web, :lat, :lon)) if params[:status]
+		Bar.create(params.require(:bar).permit(:name, :street, :city_state_zip, :day, :time, :theme, :web, :latitude, :longitude)) if params[:status]
 		redirect_to bars_path(@bar)
 	end
 
@@ -51,7 +50,7 @@ class BarsController < ApplicationController
 
 	def update
 		@bar = Bar.find(params[:id])
-		if @bar.update(params.require(:bar).permit(:biz_id, :name, :street, :city_state_zip, :day, :time, :theme, :web, :lat, :lon))
+		if @bar.update(params.require(:bar).permit(:name, :street, :city_state_zip, :day, :time, :theme, :web, :latitude, :longitude))
 			redirect_to bars_path
 		else
 			render 'edit'
@@ -68,27 +67,5 @@ class BarsController < ApplicationController
 		Bar.find(params[:id]).destroy
 		redirect_to bars_path
 	end
-
-	# def search
- #    	parameters = { term: params[:term], limit: 16 }
- #    	render json: Yelp.client.search('San Francisco', parameters)
- #  	end
-	# def storeCallback
-	# 	Bar.destroy_all
-	# 		bars = Bar.create([{
-	# 			biz_id: y,
-	# 			name: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].name,
-	# 			street: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].location.display_address[0],
-	# 			city_state_zip: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].location.display_address[2],
-	# 			day: 'tuesday',
-	# 			time: '8:00pm',
-	# 			theme: 'general',
-	# 			web: Yelp.client.search('Santa Monica', {term:'bar trivia'}).businesses[y].url,
-	# 			lat: Yelp.client.search('Santa Monica', {term:'bar trivia',limit: 1, offset:y}).region.center.latitude,
-	# 			lon: Yelp.client.search('Santa Monica', {term:'bar trivia',limit: 1, offset:y}).region.center.longitude}
-	# 			])
-	# 		y += 1
-	# 	end
-	# end
 
 end 

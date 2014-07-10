@@ -1,7 +1,12 @@
 class Bar
   include Mongoid::Document
-  field :biz_id, type: Integer
+  include Geocoder::Model::Mongoid
+
+  geocoded_by :full_address
+  after_validation :geocode 
+
   field :name, type: String
+  field :full_address, type: String
   field :street, type: String
   field :city_state_zip, type: String
   field :phone, type: String
@@ -9,6 +14,10 @@ class Bar
   field :time, type: String
   field :theme, type: String
   field :web, type: String
-  field :lat, type: String
-  field :lon, type: String
+  field :latitude, type: Float
+  field :longitude, type: Float
+  field :coordinates, type: Array
+  
+
+
 end

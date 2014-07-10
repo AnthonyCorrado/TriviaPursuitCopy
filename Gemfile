@@ -8,6 +8,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'gmaps4rails'
 gem 'pg'
 gem 'figaro'
+gem 'geocoder'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

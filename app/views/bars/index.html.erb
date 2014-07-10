@@ -19,19 +19,17 @@
 					<th class="links" ></th>
 					
 				</tr>
-				<%= @bar.each do |b| %>
+				<% @bar.each do |b| %>
 				<tr>			
 					<td class="links" class="rows"><%= link_to b.name, bar_path(b.id) %></td>
-					<td class="rows">Tuesday</td>
-					<td class="rows">7:00pm</td>
+					<td class="rows"><%= b.day %></td>
+					<td class="rows"><%=  b.time %></td>
 					<td class="rows">General</td>
 					<td class="links" class="rows"><a href="<%= b.web %>">website</a></td>
 					<td class="rows"><%= button_to 'Update', edit_bar_path(b), method: 'get', :class => "button" %></td>
 					<td class="rows"></td>
 				</tr>
-
-			
-				<%end %>
+				<% end %>
 					<th class="links" class="rows" ><%= link_to 'Add A New Bar', new_bar_path, :class => "addbar"%>
 						<td class="links" class="rows"></td>
 						<td class="links" class="rows"></td>
@@ -73,8 +71,8 @@ var handler = Gmaps.build('Google');
     markers = handler.addMarkers([
       <%@bars.each do |b| %>
       {
-        lat: <%=b.lat %>, // pulls in the latitude for the marker via ERB
-        lng: <%=b.lon %>, // pulls in the longitude for the marker via ERB
+        lat: <%=b.latitude %>, // pulls in the latitude for the marker via ERB
+        lng: <%=b.longitude %>, // pulls in the longitude for the marker via ERB
         infowindow: "<%= b.name %>", // info window text (this is optional)
       },
       <% end %>
