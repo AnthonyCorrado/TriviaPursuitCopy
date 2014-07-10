@@ -8,7 +8,6 @@ class BarsController < ApplicationController
 		Bar.destroy_all
 		@all_bars.each do |b|
 			Bar.create([{
-				biz_id: b.id,
 				name: b.name,
 				street: b.location.display_address[0],
 				city_state_zip: 	
@@ -23,6 +22,7 @@ class BarsController < ApplicationController
 				theme: 'general',
 				web: b.url,	
 				}])
+			@bar = Bar
 		end
 			# @all_bars_location.each do |l|
 			# 	Bar.create([{

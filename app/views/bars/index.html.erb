@@ -19,13 +19,13 @@
 					<th class="links" ></th>
 					
 				</tr>
-			<% @all_bars.each do |b| %>
+				<%= @bar.each do |b| %>
 				<tr>			
-					<td class="links" class="rows"><%= link_to b.name, bar_path('53bd933a416e745ee4cf0000'), 'data-no-turbolink' => true %></td>
-					<td class="rows">Sunday</td>
+					<td class="links" class="rows"><%= link_to b.name, bar_path(b.id) %></td>
+					<td class="rows">Tuesday</td>
 					<td class="rows">7:00pm</td>
 					<td class="rows">General</td>
-					<td class="links" class="rows"><a href="<%= b.url %>">website</a></td>
+					<td class="links" class="rows"><a href="<%= b.web %>">website</a></td>
 					<td class="rows"><%= button_to 'Update', edit_bar_path(b), method: 'get', :class => "button" %></td>
 					<td class="rows"></td>
 				</tr>
