@@ -7,8 +7,6 @@ class Bar
 
   field :name, type: String
   field :full_address, type: String
-  field :street, type: String
-  field :city_state_zip, type: String
   field :phone, type: String
   field :day, type: String
   field :time, type: String

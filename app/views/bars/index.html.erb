@@ -71,8 +71,8 @@ var handler = Gmaps.build('Google');
     markers = handler.addMarkers([
       <%@bars.each do |b| %>
       {
-        lat: <%=b.latitude %>, // pulls in the latitude for the marker via ERB
-        lng: <%=b.longitude %>, // pulls in the longitude for the marker via ERB
+        lat: 44.8830798, // pulls in the latitude for the marker via ERB
+        lng: -93.30871309999999, // pulls in the longitude for the marker via ERB
         infowindow: "<%= b.name %>", // info window text (this is optional)
       },
       <% end %>

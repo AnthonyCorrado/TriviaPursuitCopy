@@ -3,7 +3,7 @@ class BarsController < ApplicationController
 	def index
 		@bars = Bar.all
 		client = Yelp::Client.new
-		@all_bars = Yelp.client.search(55122, term: "bar trivia").businesses
+		@all_bars = Yelp.client.search(90025, term: "bar trivia").businesses
 		@all_bars_location = Yelp.client.search(90025, term: "bar trivia").region.center
 		Bar.destroy_all
 		@all_bars.each do |b|
@@ -40,7 +40,7 @@ class BarsController < ApplicationController
 	end
 
 	def create
-		Bar.create(params.require(:bar).permit(:name, :street, :city_state_zip, :day, :time, :theme, :web, :latitude, :longitude)) if params[:status]
+		Bar.create(params.require(:bar).permit(:name, :full_address, :phone, :day, :time, :theme, :web, :latitude, :longitude, :coordinates)) if params[:status]
 		redirect_to bars_path(@bar)
 	end
 
@@ -50,18 +50,12 @@ class BarsController < ApplicationController
 
 	def update
 		@bar = Bar.find(params[:id])
-		if @bar.update(params.require(:bar).permit(:name, :street, :city_state_zip, :day, :time, :theme, :web, :latitude, :longitude))
+		if @bar.update(params.require(:bar).permit(:name, :full_address, :phone, :day, :time, :theme, :web, :latitude, :longitude, :coordinates))
 			redirect_to bars_path
 		else
 			render 'edit'
 		end
 	end
-
-# 	def update  
-#   @product = Product.find_by_id(params[:id])
-#   @product.update_attributes(params[:product])
-#   flash[:success] = "Product donated!"
-# end
 
 	def destroy
 		Bar.find(params[:id]).destroy
