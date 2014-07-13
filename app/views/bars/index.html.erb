@@ -3,7 +3,13 @@
 
 <div class="backing">
 		<div id="container">
-<h1>Find a Trivia Near You</h1>
+			<div id="search">
+				<h1 id="title">Find a Trivia Near You</h1>
+			     <%= form_tag(bars_path, :method => :get) do%>
+			     <%= text_field_tag 'zipcode', nil, :placeholder => 'address or zipcode' %>
+			      <%= submit_tag 'Enter', :class => 'postfix' %>
+			     <% end %>
+			</div>
 
 
 <div id="restlist">
