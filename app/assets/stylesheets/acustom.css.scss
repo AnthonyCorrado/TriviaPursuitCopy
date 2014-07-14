@@ -122,6 +122,9 @@ div.image {
 .selects {
 	color: white;
 }
+select {
+	width: 25%;
+}
 .bluebuttons {
 	color: #4289c7;
 }
@@ -137,4 +140,10 @@ input {
 #app-title-center {
 	position: relative;
 	padding: 0 30% 0 25%;
+}
+.notice-font {
+	text-align: center;
+}
+#notice-table {
+	border-radius: 50px;
 }

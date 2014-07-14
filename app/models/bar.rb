@@ -15,7 +15,4 @@ class Bar
   field :latitude, type: Float
   field :longitude, type: Float
   field :coordinates, type: Array
-  
-
-
 end

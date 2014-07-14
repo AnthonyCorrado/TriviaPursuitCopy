@@ -25,7 +25,7 @@
 					<th class="links" ></th>
 					
 				</tr>
-				<% @bar.each do |b| %>
+				<% @bars.each do |b| %>
 				<tr>			
 					<td class="links" class="rows"><%= link_to b.name, bar_path(b.id) %></td>
 					<td class="rows"><%= b.day %></td>
