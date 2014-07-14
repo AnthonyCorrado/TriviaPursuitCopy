@@ -62,7 +62,7 @@
 
 var handler = Gmaps.build('Google');
 
-  handler.buildMap({ provider: {zoom: 16, provider_key: "AIzaSyDJJPOQH24cT6ETa9IZacS7NENpUt2MKzA"}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {zoom: 14, provider_key: "AIzaSyDJJPOQH24cT6ETa9IZacS7NENpUt2MKzA"}, internal: {id: 'map'}}, function(){
   	if(navigator.geolocation)
     	navigator.geolocation.getCurrentPosition(displayOnMap);
 
@@ -77,10 +77,11 @@ var handler = Gmaps.build('Google');
     markers = handler.addMarkers([
       <%@bars.each do |b| %>
       {
-        lat: 44.8830798, // pulls in the latitude for the marker via ERB
-        lng: -93.30871309999999, // pulls in the longitude for the marker via ERB
+        lat: <%= b.coordinates[1] %>, // pulls in the latitude for the marker via ERB
+        lng: <%= b.coordinates[0] %>, // pulls in the longitude for the marker via ERB
         infowindow: "<%= b.name %>", // info window text (this is optional)
-      },
+      }, 
+  
       <% end %>
     ]);
     
